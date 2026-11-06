@@ -1,75 +1,35 @@
-# Beyond Masterclass — Página de captura
+# Beyond Masterclass — Página de obrigado
 
-Landing page da **Masterclass Arquitetura do Sucesso™** com envio de leads para um webhook (n8n, Make, Zapier, CRM etc.) através de uma função serverless na Vercel.
+Página estática da Masterclass Arquitetura do Sucesso™, preparada para publicação na Vercel.
 
 ## Estrutura
 
-```
-public/index.html   → a página (estática)
-api/lead.js         → recebe o formulário, valida e repassa ao webhook
-vercel.json         → headers de segurança
-.env.example        → variáveis de ambiente
-```
+- `index.html` — página completa, incluindo a visualização de obrigado e o formulário de inscrição.
+- `vercel.json` — headers de segurança e URLs limpas.
 
-## Como funciona
+## Configuração antes da publicação
 
-1. O formulário faz `POST /api/lead` com o JSON do lead.
-2. `api/lead.js` valida, bloqueia bots (honeypot + limite por IP) e envia ao `WEBHOOK_URL`.
-3. A URL do webhook fica só no servidor, nunca no navegador.
+No fim de `index.html`, no objeto `CONFIG`, substitua os valores vazios pelos endereços oficiais:
 
-### Payload recebido no webhook (JSON)
-
-```json
-{
-  "nome": "Maria Silva",
-  "email": "maria@email.com",
-  "whatsapp": "+5585999999999",
-  "consentimento": true,
-  "origem": "landing-masterclass-arquitetura-do-sucesso",
-  "evento": "Masterclass Arquitetura do Sucesso",
-  "pagina": "https://seusite.com.br/?utm_source=instagram",
-  "referrer": "",
-  "tracking": { "utm_source": "instagram" },
-  "registradoEm": "2026-10-23T12:00:00.000Z",
-  "ip": "200.0.0.1",
-  "userAgent": "Mozilla/5.0 ..."
-}
+```js
+const CONFIG = {
+  webhookUrl: 'https://seu-webhook.example/lead',
+  grupoVipUrl: 'https://chat.whatsapp.com/seu-convite'
+};
 ```
 
-Se `WEBHOOK_SECRET` estiver definida, a requisição leva o header `x-webhook-secret` para o webhook conferir.
+`webhookUrl` deve aceitar `POST` com JSON e permitir CORS a partir do domínio publicado. `grupoVipUrl` deve ser o convite HTTPS oficial do Grupo VIP. Não coloque tokens, chaves privadas ou credenciais neste ficheiro.
 
-## Variáveis de ambiente
+Se `webhookUrl` estiver vazio, o formulário continua a validar os campos e abre a página de obrigado, mas nenhum dado é enviado ou guardado. Quando o webhook for configurado, o mesmo botão passa a enviar o lead antes de abrir a confirmação.
 
-| Variável | Obrigatória | Descrição |
-|---|---|---|
-| `WEBHOOK_URL` | Sim | URL HTTPS do webhook que recebe os leads |
-| `WEBHOOK_SECRET` | Não | Segredo enviado no header `x-webhook-secret` |
-| `ALLOWED_ORIGINS` | Não | Domínios autorizados, separados por vírgula |
+A página abre inicialmente no modo visual de obrigado. Para voltar ao fluxo de inscrição, use o botão “Voltar à inscrição”. O parâmetro `?preview=obrigado` é mantido como referência de pré-visualização.
 
 ## Deploy na Vercel
 
-1. Suba este repositório no GitHub.
-2. Na Vercel: **Add New → Project** → importe o repositório.
-3. Em *Framework Preset* deixe **Other**. Em *Output Directory* informe `public`.
-4. Em **Environment Variables**, cadastre `WEBHOOK_URL` (e, se quiser, `WEBHOOK_SECRET` e `ALLOWED_ORIGINS`).
-5. **Deploy**. Depois, adicione o domínio em *Settings → Domains*.
+1. Importe este repositório na Vercel.
+2. Escolha **Other** como Framework Preset.
+3. Deixe o Root Directory como a raiz do repositório.
+4. Não é necessário Build Command nem Output Directory.
+5. Faça o deploy.
 
-> Alterou uma variável de ambiente? Faça um **Redeploy** para ela valer.
-
-## Testar localmente
-
-```bash
-npm i -g vercel
-cp .env.example .env.local   # preencha WEBHOOK_URL
-vercel dev
-```
-
-Teste rápido do endpoint:
-
-```bash
-curl -X POST http://localhost:3000/api/lead \
-  -H "Content-Type: application/json" \
-  -d '{"nome":"Teste Silva","email":"teste@email.com","whatsapp":"+5585999999999","consentimento":true}'
-```
-
-> Dica: para testar sem CRM, crie um endpoint gratuito em webhook.site e use como `WEBHOOK_URL`.
+Como o projeto é HTML/CSS/JavaScript puro, a Vercel pode servi-lo sem build. Depois de configurar os dois URLs no `index.html`, faça um novo commit e redeploy.
