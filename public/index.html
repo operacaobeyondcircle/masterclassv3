@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#0b0b0c" />
-  <meta name="description" content="Masterclass Arquitetura do Sucesso™ — descubra onde seu potencial está travado e qual arquitetura precisa começar a construir." />
+  <meta name="description" content="Masterclass Arquitetura do Sucesso™ — descubra as 3 decisões que estão segurando o próximo passo da sua empresa." />
   <title>Masterclass Arquitetura do Sucesso™ | (B)eyond Circle</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -143,6 +143,29 @@
 
     .event-date{margin-top:14px;color:#d51e3a;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
     .form-date{margin:-5px 0 12px;color:#d51e3a;font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:700}
+
+    .copy-section{background:var(--paper);color:var(--black);padding:92px 0 96px;border-top:1px solid #e4e4e1}
+    .copy-section.dark{background:var(--black2);color:#fff;border-top:0}
+    .copy-section h2{font-size:clamp(43px,5vw,72px);line-height:1.06;letter-spacing:-.03em;max-width:840px}
+    .copy-section h2 em{color:var(--red);font-style:italic}
+    .copy-section .copy-lead{max-width:720px;margin-top:22px;color:#5f5f5d;font-size:16px;line-height:1.85}
+    .copy-section.dark .copy-lead{color:#c5bec0}
+    .copy-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 42px;margin-top:44px;border-top:1px solid #cfcfcd}
+    .copy-list li{list-style:none;padding:19px 0;border-bottom:1px solid #dcdcd9;color:#4f4f4e;font-size:14px;line-height:1.7}
+    .copy-list li::before{content:'•';color:var(--red);font-size:22px;line-height:0;vertical-align:-2px;margin-right:10px}
+    .copy-section.dark .copy-list{border-color:var(--borderdark)}
+    .copy-section.dark .copy-list li{border-color:var(--borderdark);color:#c5bec0}
+    .copy-section.dark .copy-list li::before{content:'→'}
+    .copy-quote{margin-top:48px;background:#121213;color:#fff;padding:35px 42px;font-family:var(--serif);font-size:clamp(27px,3vw,43px);line-height:1.2}
+    .copy-quote em{color:var(--red2);font-style:italic}
+    .bio-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:64px;align-items:start;margin-top:44px}
+    .bio-mark{font-family:var(--serif);font-size:clamp(130px,20vw,250px);line-height:.65;color:var(--red);font-style:italic}
+    .bio-copy{color:#c5bec0;font-size:15px;line-height:1.85;max-width:720px}
+    .bio-copy p+p{margin-top:20px}
+    .bio-copy strong{color:#fff}
+    .bio-sign{margin-top:29px;color:#fff;font-family:var(--serif);font-size:30px;font-style:italic}
+    .offer-note{margin-top:22px;color:#656565;font-size:12px;line-height:1.7}
+    @media(max-width:850px){.copy-list{grid-template-columns:1fr}.bio-grid{grid-template-columns:1fr;gap:25px}.bio-mark{font-size:150px}}
   </style>
 </head>
 <body>
@@ -153,30 +176,29 @@
         <span class="brandline">eyond <b>Circle</b></span>
       </a>
       <nav class="nav-links" aria-label="Menu principal">
-        <a href="#diagnostico">O que pode estar travando</a>
-        <a href="#experiencia">A experiência</a>
+        <a href="#para-voce">Para quem é</a>
+        <a href="#entregaveis">O que você vai levar</a>
       </nav>
-      <a class="nav-cta" href="#inscricao">Quero participar ↗</a>
+      <a class="nav-cta" href="#inscricao">Destravar meu próximo passo ↗</a>
     </div>
   </header>
   <main>
-    <!-- LÂMINA 1: promessa + captura -->
     <section class="hero" id="inicio" aria-labelledby="hero-heading">
       <div class="container hero-grid">
         <div class="hero-copy reveal">
           <p class="section-index">Masterclass · Arquitetura do Sucesso™</p>
-          <p class="event-date">23 DE NOVEMBRO · 2026 · AO VIVO E ONLINE</p>
-          <p class="microcopy" style="margin-top:25px">Identidade &nbsp;·&nbsp; Negócio &nbsp;·&nbsp; Autoridade &nbsp;·&nbsp; Vida</p>
-          <h1 id="hero-heading">Você é o seu maior ativo.<br><em>Falta arquitetura.</em></h1>
-          <p class="hero-lead">Descubra como transformar o seu potencial em um negócio autoral com <strong style="color:#fff;font-weight:600">posicionamento, lucro e liberdade</strong> — para construir uma vida de sucesso que também faça sentido para você.</p>
-          <p class="hero-quote">“O negócio é o veículo. A vida é o destino.”</p>
-          <div class="hero-tags" aria-label="Resultados da experiência"><span>Revelação</span><span>Visão</span><span>Direção</span></div>
+          <p class="event-date">23 DE NOVEMBRO · SEGUNDA-FEIRA · 20H15 · BRASÍLIA</p>
+          <p class="microcopy" style="margin-top:25px">AO VIVO E ONLINE · A PARTIR DE R$ 97</p>
+          <h1 id="hero-heading">Descubra as <em>3 decisões</em> que estão segurando o próximo passo da sua empresa.</h1>
+          <p class="hero-lead">Em <strong style="color:#fff;font-weight:600">3 horas ao vivo com Barbara Bacchi</strong>, identifique as decisões e oportunidades que você vem adiando, entenda o que realmente faz você adiar e saia com o plano para tomar a primeira nos próximos 7 dias, com mais clareza e menos peso.</p>
+          <p class="hero-quote">“Você não precisa esperar estar pronta. Você já construiu o suficiente para decidir.”</p>
+          <div class="hero-tags" aria-label="Informações do evento"><span>23 de novembro</span><span>20h15 · Brasília</span><span>Ao vivo e online</span></div>
         </div>
         <div class="form-shell reveal" id="inscricao">
-          <p class="form-eyebrow">Dê o primeiro passo</p>
-          <p class="form-date">23 de novembro de 2026 · edição ao vivo</p>
-          <h2>O seu próximo capítulo começa aqui.</h2>
-          <p class="form-intro">Preencha seus dados para solicitar sua participação e receber as informações da Masterclass.</p>
+          <p class="form-eyebrow">Formulário de participação</p>
+          <p class="form-date">23 de novembro · 20h15 · ao vivo</p>
+          <h2>Destrave o seu próximo passo.</h2>
+          <p class="form-intro">Preencha seus dados para receber as orientações da Masterclass Arquitetura do Sucesso™.</p>
           <form id="leadForm" novalidate>
             <div class="form-grid">
               <div><label for="fullName">Seu nome</label><input class="field" id="fullName" name="nome" type="text" placeholder="Nome completo" autocomplete="name" maxlength="100" required /></div>
@@ -184,85 +206,125 @@
               <div><label for="phone">Seu WhatsApp</label><input class="field" id="phone" name="whatsapp" type="tel" placeholder="(11) 99999-9999" inputmode="tel" autocomplete="tel-national" maxlength="16" required /></div>
               <div class="honeypot" aria-hidden="true"><label for="site">Seu site</label><input id="site" name="website" tabindex="-1" autocomplete="off"></div>
               <label class="consent" for="consent"><input id="consent" name="consentimento" type="checkbox" required><span>Autorizo o contato por e-mail e WhatsApp para receber informações sobre a Masterclass Arquitetura do Sucesso™.</span></label>
-              <button class="submit" id="submitBtn" type="submit"><span>Quero participar da Masterclass</span><span class="arrow" aria-hidden="true">↗</span></button>
+              <button class="submit" id="submitBtn" type="submit"><span>Quero destravar o meu próximo passo</span><span class="arrow" aria-hidden="true">↗</span></button>
             </div>
             <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-            <p class="form-note">Seus dados serão utilizados para contato relacionado à Masterclass. Nenhum pagamento é realizado nesta página.</p>
+            <p class="form-note">O ingresso é a partir de R$ 97. Seus dados serão utilizados para contato relacionado à Masterclass.</p>
           </form>
         </div>
       </div>
-      <div class="hero-footer" aria-hidden="true"><div class="container"><span>(B)eyond Circle / Self Architecture™</span><span>01 / 03 — Reconhecer</span></div></div>
+      <div class="hero-footer" aria-hidden="true"><div class="container"><span>(B)eyond Circle / Arquitetura do Sucesso™</span><span>23 NOV · 20H15</span></div></div>
     </section>
 
-    <!-- OFERTAS / INSCRIÇÃO -->
-    <section class="pricing" id="oferta" aria-labelledby="oferta-heading">
+    <section class="copy-section" id="para-voce" aria-labelledby="para-voce-heading">
       <div class="container">
-        <div class="section-index" style="color:#656565">Escolha seu ingresso</div>
-        <div class="pricing-head">
-          <h2 id="oferta-heading">A experiência que combina com o seu <em>próximo capítulo.</em></h2>
-          <p class="pricing-lead">Escolha a modalidade da Masterclass Arquitetura do Sucesso™ em 23 de novembro de 2026 e avance diretamente para a página segura de pagamento.</p>
-        </div>
-        <div class="pricing-grid">
-          <article class="price-card featured">
-            <span class="badge">Mais escolhido</span>
-            <span class="label">Participação ao vivo</span>
-            <h3>Masterclass ao vivo</h3>
-            <div class="price"><small>R$</small>97</div>
-            <p>Para participar da edição única ao vivo e construir sua próxima arquitetura com Barbara Bacchi.</p>
-            <ul><li>Acesso à Masterclass ao vivo</li><li>Workbook e materiais da aula</li><li>Mapa de Arquitetura 2027™ e plano de ação</li></ul>
-            <a href="https://pay.simplles.com/yqVisC1lOAogNPhc?offerCode=JtRRmdlo" target="_blank" rel="noopener noreferrer">Garantir ingresso <span aria-hidden="true">↗</span></a>
-          </article>
-          <article class="price-card">
-            <span class="label">Ao vivo + gravação</span>
-            <h3>Experiência completa</h3>
-            <div class="price"><small>R$</small>147</div>
-            <p>Para viver o encontro ao vivo e rever o conteúdo depois, com mais tempo para aplicar o plano.</p>
-            <ul><li>Inclui todos os itens do ingresso ao vivo</li><li>Gravação disponibilizada em até 7 dias</li><li>Revisão prática do conteúdo</li></ul>
-            <a href="https://pay.simplles.com/yqVisC1lOAogNPhc?offerCode=QrB0zRof" target="_blank" rel="noopener noreferrer">Garantir ingresso <span aria-hidden="true">↗</span></a>
-          </article>
-        </div>
+        <div class="section-index">A Masterclass Arquitetura do Sucesso™ é para você que</div>
+        <h2 id="para-voce-heading" style="margin-top:25px">Você já construiu algo sólido.<br><em>Agora precisa decidir o próximo passo.</em></h2>
+        <ul class="copy-list">
+          <li>Já construiu uma empresa sólida, mas sente que algumas decisões importantes estão esperando há meses.</li>
+          <li>Só avança quando se sente totalmente preparada — e esse dia quase nunca chega.</li>
+          <li>Revisa cada detalhe até ficar impecável, mesmo quando ninguém além de você perceberia a diferença.</li>
+          <li>Resolve quase tudo sozinha e no controle, carregando um peso que ninguém vê.</li>
+          <li>Quer ser reconhecida pelo que construiu, sem abrir mão da sua discrição, da sua vida privada e da sua paz.</li>
+          <li>Quer dar o próximo passo da sua empresa com mais leveza, e com tempo para a sua família e para você.</li>
+        </ul>
+        <p style="margin-top:35px"><a class="nav-cta" href="#oferta" style="display:inline-block;background:var(--red);color:#fff;border-color:var(--red)">Quero garantir a minha vaga ↗</a></p>
       </div>
     </section>
-    <!-- LÂMINA 2: dores / contraste -->
-    <section class="diagnosis" id="diagnostico" aria-labelledby="diagnostico-heading">
+
+    <section class="copy-section dark" id="entregaveis" aria-labelledby="entregaveis-heading">
       <div class="container">
-        <div class="section-index reveal">02 / 03 — Reconheça a distância</div>
+        <div class="section-index reveal" style="color:#b5b5b5">O que você vai levar</div>
+        <h2 class="reveal" id="entregaveis-heading" style="margin-top:25px">Clareza para decidir.<br><em>Leveza para começar.</em></h2>
+        <p class="copy-lead">Durante as 3 horas ao vivo, com o workbook aberto e Barbara conduzindo cada passo, você vai:</p>
+        <ul class="copy-list reveal">
+          <li>Colocar no papel as 3 decisões que estão segurando o próximo passo da sua empresa e o que cada uma está custando à sua empresa e à sua vida.</li>
+          <li>Entender o que realmente faz você adiar — e por que isso não tem nada a ver com falta de capacidade.</li>
+          <li>Descobrir qual das três decisões destrava as outras e por onde começar.</li>
+          <li>Definir pelo que você quer ser reconhecida, do seu jeito e no seu tempo.</li>
+          <li>Preencher o seu Mapa de Arquitetura 2027, com suas decisões, prioridades e a direção que deseja.</li>
+          <li>Sair com o plano para tomar a primeira decisão nos próximos 7 dias.</li>
+        </ul>
+        <p style="margin-top:35px"><a class="nav-cta" href="#oferta" style="display:inline-block;background:var(--red);color:#fff;border-color:var(--red)">Quero participar da Masterclass ↗</a></p>
+      </div>
+    </section>
+
+    <section class="diagnosis" id="metodo" aria-labelledby="metodo-heading">
+      <div class="container">
+        <div class="section-index reveal">O mecanismo</div>
         <div class="diag-intro reveal">
-          <h2 id="diagnostico-heading">Você não está sem potencial.<br><em>Talvez esteja sem arquitetura.</em></h2>
-          <p>Você pode ser excelente, ter experiência, clientes e resultados — e ainda perceber uma distância entre o que construiu e o que seria capaz de viver. A questão não é apenas crescer. É entender o que precisa mudar.</p>
+          <h2 id="metodo-heading">Esta não é<br><em>mais uma aula</em> de marketing ou gestão.</h2>
+          <p>A maioria das empresárias tenta destravar o próximo passo fazendo mais: mais cursos, mais preparo, mais horas de trabalho. E é exatamente por isso que as decisões continuam paradas.</p>
         </div>
-        <div class="leaks reveal" aria-label="Os cinco vazamentos de potencial">
-          <article class="leak"><span class="leak-number">01</span><h3>O potencial que você não reconhece</h3><p>Talentos, repertório e capacidades valiosas que ainda permanecem invisíveis para você mesma.</p></article>
-          <article class="leak"><span class="leak-number">02</span><h3>O potencial que o mercado não percebe</h3><p>Você entrega muito, mas ainda não está claro por que alguém deveria escolher você.</p></article>
-          <article class="leak"><span class="leak-number">03</span><h3>O potencial preso na sua hora</h3><p>O negócio cresce, mas continua dependendo demais da sua presença em cada decisão.</p></article>
-          <article class="leak"><span class="leak-number">04</span><h3>O potencial construindo a vida errada</h3><p>Mais faturamento pode estar produzindo menos tempo, escolhas e liberdade.</p></article>
-          <article class="leak"><span class="leak-number">05</span><h3>O potencial que não se acumula</h3><p>Você fatura e entrega, mas ainda não transforma isso em ativos que permanecem.</p></article>
-        </div>
-        <div class="diagnostic-quote reveal"><p>Se o seu negócio crescesse cinco vezes exatamente como está, <em>você desejaria a vida que viria junto?</em></p><small>Uma pergunta do método Self Architecture™</small></div>
+        <div class="copy-quote reveal">Uma decisão que não está travada por falta de informação <em>não se resolve com mais informação.</em></div>
+        <ul class="copy-list reveal" style="margin-top:40px">
+          <li>Por que mulheres competentes adiam justamente as decisões mais importantes.</li>
+          <li>Como a mesma cautela que trouxe você até aqui hoje segura o seu próximo passo.</li>
+          <li>Como voltar a decidir com clareza e leveza, sem precisar estar 100% pronta.</li>
+        </ul>
       </div>
     </section>
-    <!-- LÂMINA 3: entrega e CTA -->
+
     <section class="experience" id="experiencia" aria-labelledby="experiencia-heading">
       <div class="container">
-        <div class="section-index reveal">03 / 03 — Enxergue o próximo movimento</div>
-        <h2 class="reveal" id="experiencia-heading">Você não precisa de mais motivação.<br><em>Precisa de direção.</em></h2>
+        <div class="section-index reveal">A experiência ao vivo</div>
+        <h2 class="reveal" id="experiencia-heading">Três decisões.<br><em>Um próximo passo possível.</em></h2>
         <div class="promise-row reveal">
-          <div class="promise"><div class="count">01 / REVELAÇÃO</div><h3>Enxergar</h3><p>Identifique onde o seu potencial está sendo subutilizado e onde existe um vazamento de valor.</p></div>
-          <div class="promise"><div class="count">02 / VISÃO</div><h3>Visualizar</h3><p>Veja com mais clareza a mulher, o negócio, a posição e a vida que deseja construir.</p></div>
-          <div class="promise"><div class="count">03 / DIREÇÃO</div><h3>Priorizar</h3><p>Reconheça a arquitetura que precisa começar a transformar e sua prioridade para os próximos 90 dias.</p></div>
+          <div class="promise"><div class="count">01 / IDENTIFICAR</div><h3>Colocar no papel</h3><p>Reconhecer as três decisões que estão esperando e o custo de mantê-las paradas.</p></div>
+          <div class="promise"><div class="count">02 / ENTENDER</div><h3>Ver o que adia</h3><p>Compreender o mecanismo por trás da cautela, sem transformar competência em cobrança.</p></div>
+          <div class="promise"><div class="count">03 / DECIDIR</div><h3>Começar leve</h3><p>Escolher a primeira decisão e sair com um plano de ação para os próximos 7 dias.</p></div>
         </div>
         <div class="scan reveal">
-          <div><span class="scan-label">A experiência central</span><h3>Self Architecture Scan™</h3><p>Uma experiência de autodiagnóstico para olhar a mulher e o negócio como um sistema, identificar o principal gargalo e sair com um <strong style="color:white;font-weight:600">Mapa da Próxima Arquitetura™</strong>.</p></div>
-          <div class="scan-categories" aria-label="As nove dimensões do diagnóstico">
-            <div class="cat"><b>Fundamento</b><span>Self · Origin · Vision</span></div>
-            <div class="cat"><b>Valor e posição</b><span>Expression · Audience · Value</span></div>
-            <div class="cat"><b>Negócio e patrimônio</b><span>Revenue · Ecosystem · Equity</span></div>
+          <div><span class="scan-label">Entregável central</span><h3>Mapa de Arquitetura 2027™</h3><p>Um mapa para registrar suas decisões, prioridades e a direção que você deseja — preenchido por você durante a Masterclass, com o workbook aberto.</p></div>
+          <div class="scan-categories" aria-label="O que será organizado no mapa"><div class="cat"><b>Decisões</b><span>o que está esperando</span></div><div class="cat"><b>Prioridades</b><span>o que destrava o resto</span></div><div class="cat"><b>Direção</b><span>o primeiro movimento</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="copy-section dark" id="barbara" aria-labelledby="barbara-heading">
+      <div class="container">
+        <div class="section-index" style="color:#b5b5b5">Quem conduz</div>
+        <div class="bio-grid">
+          <div class="bio-mark" aria-hidden="true">B</div>
+          <div class="bio-copy">
+            <h2 id="barbara-heading" style="color:#fff">Barbara Bacchi<br><em>visão para decidir.</em></h2>
+            <p style="margin-top:25px">Barbara Bacchi é diretora criativa, empreendedora e construtora de negócios 360°: do business ao branding, da experiência à arquitetura.</p>
+            <p>Em 16 anos, construiu mais de 120 negócios: os seus próprios, de loja de roupa a shopping, passando por restaurante, e os de grandes nomes do empresariado brasileiro. Desenvolveu projetos e colaborações com LVMH, Audi, Land Rover, Vitacon e Dolce&amp;Gabbana.</p>
+            <p>É professora convidada do MBA em Design de Luxo da Faculdade Roberto Miranda, colunista da Glamurama e da Revista Perfil, vencedora do Brasil Design Awards e a primeira brasileira indicada ao London Bar &amp; Restaurant Design Awards.</p>
+            <p>À frente do (B)eyond Circle, ajuda mulheres empresárias a transformar história, identidade e repertório em decisões, reconhecimento e liberdade. É mãe e casada há 13 anos, e sabe na prática que uma empresa só é bem-sucedida quando sustenta a vida que se quer viver.</p>
+            <p class="bio-sign">“O negócio precisa sustentar a vida que se quer viver.”</p>
           </div>
         </div>
       </div>
-      <div class="last-cta">
-        <div class="container"><h3>Existe uma vida à altura do seu potencial. <em>Ela não acontece por acaso.</em></h3><a href="#oferta">Escolher meu ingresso <span aria-hidden="true">↗</span></a></div>
+    </section>
+
+    <section class="pricing" id="oferta" aria-labelledby="oferta-heading">
+      <div class="container">
+        <div class="section-index" style="color:#656565">Sua inscrição</div>
+        <div class="pricing-head">
+          <h2 id="oferta-heading">O ingresso é a partir de <em>R$ 97.</em><br>Mas não é para qualquer uma.</h2>
+          <p class="pricing-lead">Esta é uma experiência para empresárias que já construíram algo sólido e perceberam que adiar as decisões mais importantes tem um custo, para a empresa e para a vida.</p>
+        </div>
+        <div class="pricing-grid">
+          <article class="price-card featured">
+            <span class="label">Ao vivo</span><h3>Masterclass ao vivo</h3><div class="price"><small>R$</small>97</div>
+            <p>Para decidir com Barbara Bacchi e começar o próximo passo com mais clareza e menos peso.</p>
+            <ul><li>Acesso à Masterclass ao vivo</li><li>Workbook e materiais da aula</li><li>Mapa de Arquitetura 2027 e plano de ação</li><li>Grupo VIP com orientações de preparação</li></ul>
+            <a href="https://pay.simplles.com/yqVisC1lOAogNPhc?offerCode=JtRRmdlo" target="_blank" rel="noopener noreferrer">Garantir ingresso <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="price-card">
+            <span class="label">Ao vivo + gravação</span><h3>Experiência completa</h3><div class="price"><small>R$</small>147</div>
+            <p>Para viver o encontro ao vivo e rever o conteúdo depois, com mais tempo para aplicar o plano.</p>
+            <ul><li>Inclui todos os itens do ingresso ao vivo</li><li>Gravação disponibilizada em até 7 dias</li><li>Garantia de 7 dias</li><li>Grupo VIP com orientações de preparação</li></ul>
+            <a href="https://pay.simplles.com/yqVisC1lOAogNPhc?offerCode=QrB0zRof" target="_blank" rel="noopener noreferrer">Garantir ingresso <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+        <p class="offer-note">Garanta a sua vaga: ao vivo por R$ 97 ou ao vivo + gravação por R$ 147, com garantia de 7 dias. Depois da inscrição, você entra no grupo VIP para receber o acesso e as orientações de preparação.</p>
       </div>
+    </section>
+
+    <section class="last-cta">
+      <div class="container"><h3>Você não precisa esperar estar pronta. <em>Já construiu o suficiente para decidir.</em></h3><a href="#oferta">Quero participar da Masterclass <span aria-hidden="true">↗</span></a></div>
     </section>
   </main>
   <footer><div class="container"><p>© <span id="year"></span> (B)eyond Circle · Barbara Bacchi · Self Architecture™</p><p>Masterclass Arquitetura do Sucesso™</p></div></footer>
@@ -312,7 +374,7 @@
         if(Array.isArray(window.dataLayer))window.dataLayer.push({event:'lead_masterclass',source:CONFIG.source});
         form.reset();
       }catch(error){showStatus('Não foi possível enviar seus dados agora. Tente novamente em instantes ou entre em contato com a organização.');console.error('Erro ao enviar inscrição:',error);}
-      finally{submitBtn.disabled=false;submitBtn.querySelector('span').textContent='Quero participar da Masterclass';}
+      finally{submitBtn.disabled=false;submitBtn.querySelector('span').textContent='Quero destravar o meu próximo passo';}
     });
     if('IntersectionObserver' in window&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
       const io=new IntersectionObserver(entries=>{for(const entry of entries)if(entry.isIntersecting){entry.target.classList.add('in-view');io.unobserve(entry.target)}},{threshold:.09});
