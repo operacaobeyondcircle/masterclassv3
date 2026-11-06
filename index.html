@@ -263,6 +263,14 @@ body.modal-open{overflow:hidden}
 .btn,.bx-btn,.nav-cta,.bx-mobile-sticky-cta,.submit{background:#168a4b!important;border-color:#168a4b!important;color:#fff!important}
 .btn:hover,.bx-btn:hover,.nav-cta:hover,.bx-mobile-sticky-cta:hover,.submit:hover{background:#0f6f3b!important;border-color:#0f6f3b!important;color:#fff!important}
 .btn:focus-visible,.bx-btn:focus-visible,.nav-cta:focus-visible,.bx-mobile-sticky-cta:focus-visible,.submit:focus-visible{outline-color:#168a4b!important}
+
+/* Mobile: manter a headline completa acima do CTA fixo */
+@media (max-width:700px){
+  .bx-hero .hero-art{height:clamp(260px,72vw,330px)!important;min-height:0!important;max-height:330px!important}
+  .bx-hero .bx-headline{font-size:clamp(35px,9vw,42px)!important;line-height:1.02!important;letter-spacing:-.02em!important;margin-bottom:16px!important}
+  .bx-hero .bx-headline span.ed-h1-line{font-size:1em!important;line-height:1.02!important;margin-top:.12em!important}
+  .bx-hero .bx-headline span.ed-script{font-size:1em!important;line-height:1.02!important;letter-spacing:-.01em!important;margin-top:.08em!important}
+}
 </style>
 <style>\n/* V9: accessibility, mobile usability, performance and focus polish */
 [hidden]{display:none!important}
