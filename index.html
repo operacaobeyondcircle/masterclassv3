@@ -271,6 +271,11 @@ body.modal-open{overflow:hidden}
   .bx-hero .bx-headline span.ed-h1-line{font-size:1em!important;line-height:1.02!important;margin-top:.12em!important}
   .bx-hero .bx-headline span.ed-script{font-size:1em!important;line-height:1.02!important;letter-spacing:-.01em!important;margin-top:.08em!important}
 }
+
+/* Mobile: elevar a sombra de transição da foto para a headline */
+@media (max-width:700px){
+  .bx-hero .hero-art::after{height:40%!important;background:linear-gradient(to bottom,transparent 0%,rgba(241,236,230,.48) 48%,#F1ECE6 100%)!important}
+}
 </style>
 <style>\n/* V9: accessibility, mobile usability, performance and focus polish */
 [hidden]{display:none!important}
