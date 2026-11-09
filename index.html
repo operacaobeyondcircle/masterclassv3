@@ -287,6 +287,22 @@ body.modal-open{overflow:hidden}
   .bx-mobile-sticky{transition:transform .22s ease,opacity .22s ease}
   body.offer-is-visible .bx-mobile-sticky{transform:translateY(120%);opacity:0;pointer-events:none}
 }
+
+/* Mobile: pop-up de inscrição mais compacto */
+@media (max-width:700px){
+  .lead-modal__intro{padding:15px 18px 8px!important}
+  .lead-modal__intro h2{font-size:28px!important;margin:5px 0 5px!important}
+  .lead-modal__intro h2 em{font-size:38px!important;margin-top:2px!important}
+  .lead-modal__intro p{font-size:11px!important;line-height:1.4!important;margin-top:8px!important}
+  .lead-modal .capture{padding:12px 0 16px!important;margin:0 18px!important}
+  .lead-modal .capture-head{margin-bottom:9px!important}
+  .lead-modal .capture-head h3{font-size:19px!important}
+  .lead-modal .form-grid{gap:8px!important}
+  .lead-modal .field label{margin-bottom:4px!important}
+  .lead-modal .field input{height:44px!important;padding:9px 11px!important}
+  .lead-modal .form-bottom{gap:0!important}
+  .lead-modal .form-bottom .btn{min-height:48px!important}
+}
 </style>
 <style>\n/* V9: accessibility, mobile usability, performance and focus polish */
 [hidden]{display:none!important}
@@ -974,7 +990,7 @@ strong,b{font-weight:600}
 <div class="field wide"><label for="telefone">WhatsApp com DDD</label><input aria-describedby="telefoneError" aria-invalid="false" autocomplete="tel-national" id="telefone" inputmode="tel" name="telefone" placeholder="Ex.: (11) 99999-9999…" required="" type="tel"/><p aria-live="polite" class="field-error" hidden="" id="telefoneError">Digite seu WhatsApp com DDD (por exemplo, 11 99999 9999).</p></div>
 </div><div aria-hidden="true" class="honeypot"><label for="website">Website</label><input autocomplete="off" id="website" name="website" tabindex="-1" type="text"/></div>
 <p class="consent">Autorizo o contato por WhatsApp e e mail com informações sobre a Masterclass e reconheço o uso dos meus dados para essa finalidade.</p>
-<div class="form-bottom"><button class="btn" id="submitLead" type="submit">Continuar para o pagamento</button><small>Depois da inscrição, você entra no grupo VIP para receber o acesso e as orientações de preparação.</small></div>
+<div class="form-bottom"><button class="btn" id="submitLead" type="submit">Continuar para o pagamento</button></div>
 <div aria-atomic="true" aria-live="polite" class="form-feedback" id="feedback" role="status"></div>
 </form></div>
 </dialog>
