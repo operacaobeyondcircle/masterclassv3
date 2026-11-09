@@ -967,7 +967,7 @@ strong,b{font-weight:600}
 <div class="field"><label for="email">Seu melhor e mail</label><input aria-describedby="emailError" aria-invalid="false" autocomplete="email" id="email" inputmode="email" name="email" placeholder="nome@exemplo.com…" required="" spellcheck="false" type="email"/><p aria-live="polite" class="field-error" hidden="" id="emailError">Digite um e mail válido, como nome@exemplo.com.</p></div>
 <div class="field wide"><label for="telefone">WhatsApp com DDD</label><input aria-describedby="telefoneError" aria-invalid="false" autocomplete="tel-national" id="telefone" inputmode="tel" name="telefone" placeholder="Ex.: (11) 99999-9999…" required="" type="tel"/><p aria-live="polite" class="field-error" hidden="" id="telefoneError">Digite seu WhatsApp com DDD (por exemplo, 11 99999 9999).</p></div>
 </div><div aria-hidden="true" class="honeypot"><label for="website">Website</label><input autocomplete="off" id="website" name="website" tabindex="-1" type="text"/></div>
-<label class="consent"><input aria-describedby="consentError" aria-invalid="false" id="consent" name="consentimento" required="" type="checkbox"/> Autorizo o contato por WhatsApp e e mail com informações sobre a Masterclass e reconheço o uso dos meus dados para essa finalidade.</label><p aria-live="polite" class="field-error" hidden="" id="consentError">Confirme a autorização de contato para continuar.</p>
+<p class="consent">Autorizo o contato por WhatsApp e e mail com informações sobre a Masterclass e reconheço o uso dos meus dados para essa finalidade.</p>
 <div class="form-bottom"><button class="btn" id="submitLead" type="submit">Continuar para o pagamento</button><small>Depois da inscrição, você entra no grupo VIP para receber o acesso e as orientações de preparação.</small></div>
 <div aria-atomic="true" aria-live="polite" class="form-feedback" id="feedback" role="status"></div>
 </form></div>
@@ -979,7 +979,7 @@ const CONFIG = { checkoutAoVivoUrl: 'https://pay.simplles.com/yqVisC1lOAogNPhc?o
 const $ = (id) => document.getElementById(id);
 const leadModal = $('leadModal');
 const leadForm = $('leadForm');
-const requiredFields = ['nome','email','telefone','consent'];
+const requiredFields = ['nome','email','telefone'];
 function currentTicket(){ return document.querySelector('input[name="ticket"]:checked')?.value || 'ao_vivo'; }
 function priceForTicket(ticket){ return ticket === 'com_gravacao' ? 147 : 97; }
 function ticketLabel(ticket){ return ticket === 'com_gravacao' ? 'Ao vivo + gravação' : 'Ao vivo'; }
@@ -1013,14 +1013,13 @@ $('closeLeadModal').addEventListener('click', closeDialog);
 document.querySelectorAll('[data-open-lead]').forEach(b => b.addEventListener('click', e => {e.preventDefault(); showDialog(b); }));
 function clearError(id) { $(id+'Error').hidden = true; $(id).setAttribute('aria-invalid','false'); }
 function showError(id,msg) { $(id+'Error').textContent = msg; $(id+'Error').hidden=false; $(id).setAttribute('aria-invalid','true'); }
-requiredFields.forEach(id => $(id).addEventListener(id==='consent'?'change':'input', () => clearError(id)));
+requiredFields.forEach(id => $(id).addEventListener('input', () => clearError(id)));
 function validate() {
  requiredFields.forEach(clearError);
  const name=$('nome').value.trim(),mail=$('email'), tel=$('telefone').value.replace(/\D/g,'');
  if (name.length < 2) showError('nome','Informe seu nome completo.');
  if (!mail.value.trim() || !mail.checkValidity()) showError('email','Informe um e-mail válido.');
  if (tel.length < 10 || tel.length > 13) showError('telefone','Informe um WhatsApp com DDD.');
- if (!$('consent').checked) showError('consent','Autorize o contato para continuar.');
  const first=requiredFields.find(id => !$(id+'Error').hidden);
  if (first) {$(first).focus();return false;}
  return true;
@@ -1043,7 +1042,7 @@ leadForm.addEventListener('submit', async e => {
  if (/^https:\/\//i.test(CONFIG.webhookUrl)) {
    submitting=true; const btn=$('submitLead'); btn.disabled=true; btn.textContent='Preparando seu checkout…';
    try {
-     const payload={nome:$('nome').value.trim(),email:$('email').value.trim(),telefone:$('telefone').value.trim(),consentimento:true,ingresso:currentTicket(),valor:priceForTicket(currentTicket()),origem:'beyond_masterclass_23nov2026',timestamp:new Date().toISOString()};
+     const payload={nome:$('nome').value.trim(),email:$('email').value.trim(),telefone:$('telefone').value.trim(),ingresso:currentTicket(),valor:priceForTicket(currentTicket()),origem:'beyond_masterclass_23nov2026',timestamp:new Date().toISOString()};
      await fetch(CONFIG.webhookUrl,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),signal:AbortSignal.timeout(12000)});
    } catch(err) { /* checkout is official source of payment confirmation */ }
  }
