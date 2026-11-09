@@ -281,6 +281,12 @@ body.modal-open{overflow:hidden}
 @media (max-width:700px){
   .bx-hero .hero-kicker{position:relative;z-index:3;margin-top:-20px!important;margin-bottom:10px!important;color:var(--kick-l)!important}
 }
+
+/* Mobile: não deixar o CTA flutuante cobrir o botão da oferta */
+@media (max-width:700px){
+  .bx-mobile-sticky{transition:transform .22s ease,opacity .22s ease}
+  body.offer-is-visible .bx-mobile-sticky{transform:translateY(120%);opacity:0;pointer-events:none}
+}
 </style>
 <style>\n/* V9: accessibility, mobile usability, performance and focus polish */
 [hidden]{display:none!important}
@@ -994,6 +1000,16 @@ function updateTicketUI(){
 }
 document.querySelectorAll('input[name="ticket"]').forEach(radio=>radio.addEventListener('change',updateTicketUI));
 updateTicketUI();
+const offerSection = $('oferta');
+const mobileSticky = document.querySelector('.bx-mobile-sticky');
+const mobileStickyCta = document.querySelector('.bx-mobile-sticky-cta');
+if (offerSection && mobileSticky && 'IntersectionObserver' in window) {
+ const offerObserver = new IntersectionObserver(([entry]) => {
+  document.body.classList.toggle('offer-is-visible', entry.isIntersecting);
+ }, {threshold:0.05});
+ offerObserver.observe(offerSection);
+}
+if (mobileStickyCta) mobileStickyCta.addEventListener('click', () => document.body.classList.add('offer-is-visible'));
 let lastTrigger = null;
 let submitting = false;
 function showDialog(trigger) {
